@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProject/SDL_Plotter.h
+SDL2/SDL.h
+-
+SDL2/SDL_mixer.h
+-
+string.h
+-
+iostream
+-
+string
+-
+string.h
+-
+map
+-
+
+C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProject/line.h
+algorithm
+-
+point.h
+C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProject/point.h
+
+C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProject/main.cpp
+iostream
+-
+SDL_Plotter.h
+C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProject/SDL_Plotter.h
+point.h
+C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProject/point.h
+line.h
+C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProject/line.h
+
+C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProject/point.h
+SDL_Plotter.h
+C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProject/SDL_Plotter.h
+
