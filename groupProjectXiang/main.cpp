@@ -26,6 +26,7 @@ const int COL_MAX = 1000;
 point p1(50,50);
 point p2(50,50);
 
+void plotPoint(point p, SDL_Plotter& g);
 void BruteForceClosetPair(DataSet_t data,SDL_Plotter& g);
 void plotData(DataSet_t,SDL_Plotter& g);
 double distance( pair<int,long double> x,pair<int,long double> y);
@@ -54,25 +55,49 @@ int main(int argc, char** argv) {
 
 
 while(!g.getQuit()){
+    int x, y;
     double mind;
+    bool mouseClicks = true;
 		if(g.kbhit()){
 			switch(g.getKey()){
 			     case 'S':
 				//crv.setSameScale(!crv.getSameScale());
 				g.clear();
                     BruteForceClosetPair(set1,g);
+
+                    while(mouseClicks) {
+                        if(g.getMouseClick(x, y)) {
+                            set1.push_back(make_pair(x,y));
+                            BruteForceClosetPair(set1, g);
+                        }
+                        if (g.getKey() == 'O') {
+                            mouseClicks = false;
+                            cout << "Out of loop" << endl;
+                        }
+                    }
 				//crv.draw(data,g);
 				break;
 				case 'H':
                     //crv.setSameScale(!crv.getSameScale());
                     g.clear();
                     BruteForceConvexHull(set1,g);
+
+                    while(mouseClicks) {
+                        if(g.getMouseClick(x, y)) {
+                            set1.push_back(make_pair(x,y));
+                            BruteForceConvexHull(set1, g);
+                        }
+                        if (g.getKey() == 'O') {
+                            mouseClicks = false;
+                            cout << "Out of loop" << endl;
+                        }
+                    }
                     //crv.draw(data,g);
                     break;
 			    case 'C':
 			        //sort data first;
                   sort(set1.begin(), set1.end());
-                    //initate variable
+                    //initialize variable
                     indexX = 0;
                     indexY = 0;
                     minDistance.clear();
@@ -101,15 +126,15 @@ void BruteForceClosetPair(DataSet_t data,SDL_Plotter& g){
     int x,y;
     x = 0;
     y = 1;
-    for (int i = 0; i< data.size() -1; i ++){
-        for (int j = i +1; j < data.size(); j ++){
+    for (int i = 0; i < data.size() - 1; i++){
+        for (int j = i + 1; j < data.size(); j++){
             //clear screen
             g.clear();
             //plot all point;
             plotData(data,g);
             //plot current min line in green
             plotLine(data,x,y,g,0,255,0);
-            //plot curent processing line in blue
+            //plot current processing line in blue
             plotLine(data,i,j,g,0,0,255);
             d = distance(data[i],data[j]);
             g.Sleep(100);
@@ -121,7 +146,7 @@ void BruteForceClosetPair(DataSet_t data,SDL_Plotter& g){
             g.update();
         }
     }
-    cout <<"BF "<<min << endl;
+    cout <<"Shortest Pair: "<< min << endl;
     g.clear();
     plotLine(data,x,y,g,0,255,0);
     //plot all point;
@@ -195,7 +220,34 @@ void BruteForceConvexHull(DataSet_t data,SDL_Plotter &g ){
         // cout << Convex[h].first << " " <<  Convex[h].second << " --" <<  Convex[h+1].first << " " <<  Convex[h+1].second <<endl;
     }
 }
-void plotLine(DataSet_t data,int x,int y,SDL_Plotter &g,int r,int gr,int b){;
+
+void plotPoint(point p, SDL_Plotter& g){
+    for(int i = 0; i < 2; i++){
+        for(int j = 0; j < 2; j++){
+            g.plotPixel(p.getX() + j, p.getY() + i, p.getColor().getR(), p.getColor().getG(), p.getColor().getB());
+        }
+    }
+
+    for(int i = 0; i < 2; i++){
+        for(int j = 0; j < 2; j++){
+            g.plotPixel(p.getX() - j, p.getY() + i, p.getColor().getR(), p.getColor().getG(), p.getColor().getB());
+        }
+    }
+
+    for(int i = 0; i < 2; i++){
+        for(int j = 0; j < 2; j++){
+            g.plotPixel(p.getX() + j, p.getY() - i, p.getColor().getR(), p.getColor().getG(), p.getColor().getB());
+        }
+    }
+
+    for(int i = 0; i < 2; i++){
+        for(int j = 0; j < 2; j++){
+            g.plotPixel(p.getX() - j, p.getY() - i, p.getColor().getR(), p.getColor().getG(), p.getColor().getB());
+        }
+    }
+}
+
+void plotLine(DataSet_t data,int x,int y,SDL_Plotter &g,int r,int gr,int b){
     p1.setX(data[x].first);
     p1.setY(data[x].second);
     p2.setX(data[y].first);
@@ -218,7 +270,7 @@ void plotData(DataSet_t data,SDL_Plotter& g){
      c.setB(0);
      p.setColor(c);
      // cout << p.getX() << " " << p.getY() << endl;
-     p.draw(g);
+     plotPoint(p,g);
  }
 }
 double DacClosetPair(DataSet_t data,SDL_Plotter& g,int start,int n,int &x,int &y){
