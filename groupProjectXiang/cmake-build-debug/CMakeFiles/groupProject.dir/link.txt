@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/groupProject.dir/main.cpp.o CMakeFiles/groupProject.dir/color_rgb.cpp.o CMakeFiles/groupProject.dir/point.cpp.o CMakeFiles/groupProject.dir/line.cpp.o CMakeFiles/groupProject.dir/curve.cpp.o  -o groupProject -lSDL2 -lSDL2_mixer -lSDL2main 
