@@ -67,11 +67,13 @@ while(!g.getQuit()){
 
                     while(mouseClicks) {
                         if(g.getMouseClick(x, y)) {
+                            g.clear();
                             set1.push_back(make_pair(x,y));
                             BruteForceClosetPair(set1, g);
                         }
                         if (g.getKey() == 'O') {
                             mouseClicks = false;
+                            cout << "Brute Force Closest Pair" << endl;
                             cout << "Out of loop" << endl;
                         }
                     }
@@ -84,11 +86,13 @@ while(!g.getQuit()){
 
                     while(mouseClicks) {
                         if(g.getMouseClick(x, y)) {
+                            g.clear();
                             set1.push_back(make_pair(x,y));
                             BruteForceConvexHull(set1, g);
                         }
                         if (g.getKey() == 'O') {
                             mouseClicks = false;
+                            cout << "Brute Force Convex Hull" << endl;
                             cout << "Out of loop" << endl;
                         }
                     }
@@ -131,6 +135,7 @@ while(!g.getQuit()){
                         }
                         if (g.getKey() == 'O') {
                             mouseClicks = false;
+                            cout << "Divide and Conquer Closest Pair" << endl;
                             cout << "Out of loop" << endl;
                         }
                     }
@@ -166,20 +171,23 @@ void BruteForceClosetPair(DataSet_t data,SDL_Plotter& g){
             //plot current processing line in blue
             plotLine(data,i,j,g,0,0,255);
             d = distance(data[i],data[j]);
-            g.Sleep(100);
+            g.update();
+            g.Sleep(50);
             if (d < min){
                 min = d;
                 x = i;
                 y = j;
             }
+            plotLine(data,i,j,g,255,255,255);
             g.update();
         }
     }
     cout <<"Shortest Pair: "<< min << endl;
     g.clear();
-    plotLine(data,x,y,g,0,255,0);
+    plotLine(data,x,y,g,255,0,0);
     //plot all point;
     plotData(data,g);
+    g.update();
 
 }
 void BruteForceConvexHull(DataSet_t data,SDL_Plotter &g ){
@@ -224,6 +232,7 @@ void BruteForceConvexHull(DataSet_t data,SDL_Plotter &g ){
             plotData(data,g);
             //plot current processing line
             plotLine(data,i,j,g,0,0,255);
+            g.Sleep(50);
            for (int h = 0; h < Convex.size() ; h=h+2){
                 plotLine(Convex,h,h+1,g,0,255,0);
                // cout << Convex[h].first << " " <<  Convex[h].second << " --" <<  Convex[h+1].first << " " <<  Convex[h+1].second <<endl;
@@ -248,6 +257,7 @@ void BruteForceConvexHull(DataSet_t data,SDL_Plotter &g ){
         plotLine(Convex,h,h+1,g,0,255,0);
         // cout << Convex[h].first << " " <<  Convex[h].second << " --" <<  Convex[h+1].first << " " <<  Convex[h+1].second <<endl;
     }
+    g.update();
 }
 
 void plotPoint(point p, SDL_Plotter& g){
