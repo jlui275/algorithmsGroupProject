@@ -95,8 +95,9 @@ while(!g.getQuit()){
                     //crv.draw(data,g);
                     break;
 			    case 'C':
+			        g.clear();
 			        //sort data first;
-                  sort(set1.begin(), set1.end());
+                    sort(set1.begin(), set1.end());
                     //initialize variable
                     indexX = 0;
                     indexY = 0;
@@ -105,6 +106,34 @@ while(!g.getQuit()){
                     mind = DacClosetPair(set1,g,0,set1.size(),x1,y1);
                     cout << mind << endl;
                     cout << "-x> " << distance(set1[indexX],set1[indexY]) << endl;
+                    g.clear();
+                    plotData(set1, g);
+                    plotLine(set1,indexX,indexY,g,255,0,0);
+                    g.update();
+
+                    while(mouseClicks) {
+                        if(g.getMouseClick(x, y)) {
+                            cout << "Point Added" << endl;
+                            g.clear();
+                            set1.push_back(make_pair(x,y));
+                            sort(set1.begin(), set1.end());
+                            indexX = 0;
+                            indexY = 0;
+                            minDistance.clear();
+                            int xt,yt;
+                            mind = DacClosetPair(set1,g,0,set1.size(),xt,yt);
+                            cout << mind << endl;
+                            cout << "-x> " << distance(set1[indexX], set1[indexY]) << endl;
+                            g.clear();
+                            plotData(set1, g);
+                            plotLine(set1, indexX, indexY, g, 255, 0, 0);
+                            g.update();
+                        }
+                        if (g.getKey() == 'O') {
+                            mouseClicks = false;
+                            cout << "Out of loop" << endl;
+                        }
+                    }
 			        break;
                 case 'Q':
                 g.setQuit(true);
@@ -274,23 +303,32 @@ void plotData(DataSet_t data,SDL_Plotter& g){
  }
 }
 double DacClosetPair(DataSet_t data,SDL_Plotter& g,int start,int n,int &x,int &y){
-    if (n-start <=3){
+    if (n-start <= 3) {
 
         double min = 1000000;
-        for (int i = start; i < n - 1; i ++  ){
-            for (int j = i + 1; j <n;j++){
-
-                if (distance(data[i],data[j]) < min){
-                    min = distance(data[i],data[j]);
+        for (int i = start; i < n - 1; i++) {
+            for (int j = i + 1; j < n; j++) {
+                plotData(data, g);
+                //plot current processing line in blue
+                plotLine(data, i, j, g, 0, 0, 255);
+                g.update();
+                g.Sleep(100);
+                if (distance(data[i], data[j]) < min) {
+                    min = distance(data[i], data[j]);
                     x = i;
                     y = j;
                 }
+                plotLine(data, i, j, g, 255, 255, 255);
+                g.update();
             }
         }
+        //plot minimum line in green
+        plotLine(data, x, y, g, 0, 255, 0);
+        g.update();
         cout << " --> " << x << " " << y << endl;
         return min;
     }
-   else{
+    else{
         int x1 = 0;
         int y1 = 0;
         int x2 = 0;
@@ -301,46 +339,63 @@ double DacClosetPair(DataSet_t data,SDL_Plotter& g,int start,int n,int &x,int &y
         double right = DacClosetPair(data,g,middle,n,x2,y2);
         double minD = -1;
 
-        if (left <=right){
+        //coloring left and right comparisons in orange
+        plotLine(data, x1, y1, g, 255, 165, 0);
+        plotLine(data, x2, y2, g, 255, 165, 0);
+        g.update();
+        g.Sleep(300);
+
+        if (left <= right){
             minD = left;
             indexX = x1;
             indexY = y1;
             x = x1;
             y = y1;
-
+            plotLine(data, x2, y2, g, 255, 255, 255);
+            g.update();
         }else{
             minD = right;
             indexX = x2;
             indexY = y2;
             x = x2;
             y = y2;
+            plotLine(data, x1, y1, g, 255, 255, 255);
+            g.update();
         }
 
         //check middle range
         vector<int> range;
-        for ( int i = 0; i < n -start ; i++){
+        for ( int i = start; i < n  ; i++){
             if (abs(data[i].first - data[middle].first) < minD){
                 range.push_back(i);
             }
         }
         double min_middle = minD;
-        sort(range.begin(),range.end());
         for (int i = 0; i < range.size();i++){
             for (int j = i+1; j < range.size() && (data[range[j]].second- data[range[i]].second) < min_middle; j++){
                 if (distance(data[range[i]],data[range[j]]) < min_middle){
                     min_middle = distance(data[range[i]],data[range[j]]);
                     x = range[i];
                     y = range[j];
+                    //min of middle ranges
+                    //plot the new min in brown
+                    //plotLine(data, x, y, g, 165, 42, 42);
+//                    plotLine(data, x1, y1, g, 255, 255, 255);
+//                    plotLine(data, x2, y2, g, 255, 255, 255);
+//                    g.update();
+//                    g.Sleep(500);
                 }
             }
         }
+
         if (min_middle < minD){
             minD = min_middle;
             indexX = x;
             indexY = y;
         }
-        cout << indexX << " " << indexY << endl;
+        cout << left << " " << right << " " << min_middle << endl;
         cout << "return " << minD << endl;
+
         return minD;
 
     }
