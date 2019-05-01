@@ -2,9 +2,6 @@
 
 Peer Reviews Order:
 1) Luke
-2)
-3)
-4)
-5) Justin
-6) Sterling
-7) Calvin/Janna
+2) Justin
+5) Sterling
+6) Calvin/Janna
