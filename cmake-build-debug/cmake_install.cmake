@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProject
+# Install script for directory: C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProjectGit/algorithmsGroupProject
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProject/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProjectGit/algorithmsGroupProject/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
