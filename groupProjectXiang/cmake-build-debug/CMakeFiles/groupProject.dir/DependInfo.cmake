@@ -4,11 +4,11 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/Xiang/CLionProjects/groupProject/color_rgb.cpp" "/home/Xiang/CLionProjects/groupProject/cmake-build-debug/CMakeFiles/groupProject.dir/color_rgb.cpp.o"
-  "/home/Xiang/CLionProjects/groupProject/curve.cpp" "/home/Xiang/CLionProjects/groupProject/cmake-build-debug/CMakeFiles/groupProject.dir/curve.cpp.o"
-  "/home/Xiang/CLionProjects/groupProject/line.cpp" "/home/Xiang/CLionProjects/groupProject/cmake-build-debug/CMakeFiles/groupProject.dir/line.cpp.o"
-  "/home/Xiang/CLionProjects/groupProject/main.cpp" "/home/Xiang/CLionProjects/groupProject/cmake-build-debug/CMakeFiles/groupProject.dir/main.cpp.o"
-  "/home/Xiang/CLionProjects/groupProject/point.cpp" "/home/Xiang/CLionProjects/groupProject/cmake-build-debug/CMakeFiles/groupProject.dir/point.cpp.o"
+  "C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProjectGit/algorithmsGroupProject/groupProjectXiang/color_rgb.cpp" "C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProjectGit/algorithmsGroupProject/groupProjectXiang/cmake-build-debug/CMakeFiles/groupProject.dir/color_rgb.cpp.obj"
+  "C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProjectGit/algorithmsGroupProject/groupProjectXiang/curve.cpp" "C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProjectGit/algorithmsGroupProject/groupProjectXiang/cmake-build-debug/CMakeFiles/groupProject.dir/curve.cpp.obj"
+  "C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProjectGit/algorithmsGroupProject/groupProjectXiang/line.cpp" "C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProjectGit/algorithmsGroupProject/groupProjectXiang/cmake-build-debug/CMakeFiles/groupProject.dir/line.cpp.obj"
+  "C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProjectGit/algorithmsGroupProject/groupProjectXiang/main.cpp" "C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProjectGit/algorithmsGroupProject/groupProjectXiang/cmake-build-debug/CMakeFiles/groupProject.dir/main.cpp.obj"
+  "C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProjectGit/algorithmsGroupProject/groupProjectXiang/point.cpp" "C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProjectGit/algorithmsGroupProject/groupProjectXiang/cmake-build-debug/CMakeFiles/groupProject.dir/point.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

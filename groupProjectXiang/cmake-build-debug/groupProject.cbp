@@ -8,119 +8,115 @@
 		<Option virtualFolders="CMake Files\;CMake Files\cmake\;CMake Files\cmake\Modules\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/Xiang/CLionProjects/groupProject/cmake-build-debug"/>
+				<Option working_dir="C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProjectGit/algorithmsGroupProject/groupProjectXiang/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/Xiang/CLionProjects/groupProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/Xiang/CLionProjects/groupProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/Xiang/CLionProjects/groupProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/Xiang/CLionProjects/groupProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="rebuild_cache">
-				<Option working_dir="/home/Xiang/CLionProjects/groupProject/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/Xiang/CLionProjects/groupProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/Xiang/CLionProjects/groupProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/Xiang/CLionProjects/groupProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/Xiang/CLionProjects/groupProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProjectGit/algorithmsGroupProject/groupProjectXiang/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProjectGit/algorithmsGroupProject/groupProjectXiang/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProjectGit/algorithmsGroupProject/groupProjectXiang/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProjectGit/algorithmsGroupProject/groupProjectXiang/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="groupProject">
-				<Option output="/home/Xiang/CLionProjects/groupProject/cmake-build-debug/groupProject" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/Xiang/CLionProjects/groupProject/cmake-build-debug"/>
+				<Option output="C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProjectGit/algorithmsGroupProject/groupProjectXiang/cmake-build-debug/groupProject.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProjectGit/algorithmsGroupProject/groupProjectXiang/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/include/c++/5"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
-					<Add directory="/usr/include/c++/5/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/mingw32"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/backward"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/Xiang/CLionProjects/groupProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 groupProject"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/Xiang/CLionProjects/groupProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/Xiang/CLionProjects/groupProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/Xiang/CLionProjects/groupProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProjectGit/algorithmsGroupProject/groupProjectXiang/cmake-build-debug/Makefile&quot;  VERBOSE=1 groupProject"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProjectGit/algorithmsGroupProject/groupProjectXiang/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProjectGit/algorithmsGroupProject/groupProjectXiang/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProjectGit/algorithmsGroupProject/groupProjectXiang/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="groupProject/fast">
-				<Option output="/home/Xiang/CLionProjects/groupProject/cmake-build-debug/groupProject" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/Xiang/CLionProjects/groupProject/cmake-build-debug"/>
+				<Option output="C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProjectGit/algorithmsGroupProject/groupProjectXiang/cmake-build-debug/groupProject.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProjectGit/algorithmsGroupProject/groupProjectXiang/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/include/c++/5"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
-					<Add directory="/usr/include/c++/5/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/mingw32"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/backward"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/Xiang/CLionProjects/groupProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 groupProject/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/Xiang/CLionProjects/groupProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/Xiang/CLionProjects/groupProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/Xiang/CLionProjects/groupProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProjectGit/algorithmsGroupProject/groupProjectXiang/cmake-build-debug/Makefile&quot;  VERBOSE=1 groupProject/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProjectGit/algorithmsGroupProject/groupProjectXiang/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProjectGit/algorithmsGroupProject/groupProjectXiang/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProjectGit/algorithmsGroupProject/groupProjectXiang/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/Xiang/CLionProjects/groupProject/cmake-build-debug"/>
+				<Option working_dir="C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProjectGit/algorithmsGroupProject/groupProjectXiang/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/Xiang/CLionProjects/groupProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/Xiang/CLionProjects/groupProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/Xiang/CLionProjects/groupProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/Xiang/CLionProjects/groupProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProjectGit/algorithmsGroupProject/groupProjectXiang/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProjectGit/algorithmsGroupProject/groupProjectXiang/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProjectGit/algorithmsGroupProject/groupProjectXiang/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProjectGit/algorithmsGroupProject/groupProjectXiang/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProjectGit/algorithmsGroupProject/groupProjectXiang/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProjectGit/algorithmsGroupProject/groupProjectXiang/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProjectGit/algorithmsGroupProject/groupProjectXiang/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProjectGit/algorithmsGroupProject/groupProjectXiang/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProjectGit/algorithmsGroupProject/groupProjectXiang/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/Xiang/CLionProjects/groupProject/SDL_Plotter.h">
+		<Unit filename="C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProjectGit/algorithmsGroupProject/groupProjectXiang/SDL_Plotter.h">
 			<Option target="groupProject"/>
 		</Unit>
-		<Unit filename="/home/Xiang/CLionProjects/groupProject/color_rgb.cpp">
+		<Unit filename="C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProjectGit/algorithmsGroupProject/groupProjectXiang/color_rgb.cpp">
 			<Option target="groupProject"/>
 		</Unit>
-		<Unit filename="/home/Xiang/CLionProjects/groupProject/color_rgb.h">
+		<Unit filename="C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProjectGit/algorithmsGroupProject/groupProjectXiang/color_rgb.h">
 			<Option target="groupProject"/>
 		</Unit>
-		<Unit filename="/home/Xiang/CLionProjects/groupProject/curve.cpp">
+		<Unit filename="C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProjectGit/algorithmsGroupProject/groupProjectXiang/curve.cpp">
 			<Option target="groupProject"/>
 		</Unit>
-		<Unit filename="/home/Xiang/CLionProjects/groupProject/curve.h">
+		<Unit filename="C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProjectGit/algorithmsGroupProject/groupProjectXiang/curve.h">
 			<Option target="groupProject"/>
 		</Unit>
-		<Unit filename="/home/Xiang/CLionProjects/groupProject/line.cpp">
+		<Unit filename="C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProjectGit/algorithmsGroupProject/groupProjectXiang/line.cpp">
 			<Option target="groupProject"/>
 		</Unit>
-		<Unit filename="/home/Xiang/CLionProjects/groupProject/line.h">
+		<Unit filename="C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProjectGit/algorithmsGroupProject/groupProjectXiang/line.h">
 			<Option target="groupProject"/>
 		</Unit>
-		<Unit filename="/home/Xiang/CLionProjects/groupProject/main.cpp">
+		<Unit filename="C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProjectGit/algorithmsGroupProject/groupProjectXiang/main.cpp">
 			<Option target="groupProject"/>
 		</Unit>
-		<Unit filename="/home/Xiang/CLionProjects/groupProject/point.cpp">
+		<Unit filename="C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProjectGit/algorithmsGroupProject/groupProjectXiang/point.cpp">
 			<Option target="groupProject"/>
 		</Unit>
-		<Unit filename="/home/Xiang/CLionProjects/groupProject/point.h">
+		<Unit filename="C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProjectGit/algorithmsGroupProject/groupProjectXiang/point.h">
 			<Option target="groupProject"/>
 		</Unit>
-		<Unit filename="/home/Xiang/CLionProjects/groupProject/CMakeLists.txt">
+		<Unit filename="C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProjectGit/algorithmsGroupProject/groupProjectXiang/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
-		<Unit filename="/home/Xiang/CLionProjects/groupProject/cmake/Modules/FindSDL2.cmake">
+		<Unit filename="C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProjectGit/algorithmsGroupProject/groupProjectXiang/cmake/Modules/FindSDL2.cmake">
 			<Option virtualFolder="CMake Files\cmake\Modules\"/>
 		</Unit>
-		<Unit filename="/home/Xiang/CLionProjects/groupProject/cmake/Modules/FindSDL2_mixer.cmake">
+		<Unit filename="C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProjectGit/algorithmsGroupProject/groupProjectXiang/cmake/Modules/FindSDL2_mixer.cmake">
 			<Option virtualFolder="CMake Files\cmake\Modules\"/>
 		</Unit>
 	</Project>
