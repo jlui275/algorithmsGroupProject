@@ -63,6 +63,16 @@ bool compare(pair<int,int> d1,pair<int,int> d2);
 //returns the quadrant that the point is in
 int check(pair<int,int>);
 
+//prints out the instruction to use the program
+void printInstruction(ostream& out){
+    out << "Press the 'S' key to run the Brute Force Closest Pair Algorithm" << endl;
+    out << "Press the 'H' key to run the Brute Force Convex Hull Algorithm" << endl;
+    out << "Press the 'C' key to run the Divide and Conquer Closest Pair Algorithm" << endl;
+    out << "Press the 'D' key to run the Divide and Conquer Convex Hull Algorithm" << endl;
+    out << "Press the 'P' key to print out the run time tableau" << endl;
+    out << "Press the 'Q' key to quit the program" << endl << endl;
+}
+
 //prints the run time tableau of each algorithm
 void printRunTimes(ostream& out, map<string, pair<double, int> > runTime){
     map<string, pair<double, int> >::iterator it;
@@ -76,6 +86,7 @@ void printRunTimes(ostream& out, map<string, pair<double, int> > runTime){
         out << setw(10) << right << it-> second.second;
         out << endl;
     }
+    out << endl;
 }
 
 line s;
@@ -112,10 +123,11 @@ int main(int argc, char** argv) {
     }
     plotData(set1, g);
     g.update();
-
+    printInstruction(cout);
 while(!g.getQuit()){
     int x, y;
     double minD;
+
     bool mouseClicks = true;
 		if(g.kbhit()){
 			switch(g.getKey()){
@@ -135,6 +147,10 @@ while(!g.getQuit()){
                    }
                       //after the first run occurs, user has the option to add more points via mouse clicks or by
                       //pressing the 'R' key which will plot 20 more random points
+
+                      cout << endl << "Press the mouse to generate a point on click coordinate" << endl;
+                      cout << "Press the 'R' key to generate 20 more random points" << endl;
+                      cout << "Once finished, press the 'O' key to exit the loop and choose another algorithm" << endl << endl;
                       while(mouseClicks) {
                           //plots the mouse click point and runs the algorithm again
                           if(g.getMouseClick(x, y)) {
@@ -172,6 +188,7 @@ while(!g.getQuit()){
                           if (g.getKey() == 'O') {
                               mouseClicks = false;
                               cout << "Out of loop" << endl;
+                              printInstruction(cout);
                           }
                       }
 				break;
@@ -190,6 +207,9 @@ while(!g.getQuit()){
                         runTimeIterator-> second = make_pair(duration, set1.size());
                     }
 
+                    cout << endl << "Press the mouse to generate a point on click coordinate" << endl;
+                    cout << "Press the 'R' key to generate 20 more random points" << endl;
+                    cout << "Once finished, press the 'O' key to exit the loop and choose another algorithm" << endl << endl;
                     while(mouseClicks) {
                         if(g.getMouseClick(x, y)) {
                             g.clear();
@@ -225,6 +245,7 @@ while(!g.getQuit()){
                         if (g.getKey() == 'O') {
                             mouseClicks = false;
                             cout << "Out of loop" << endl;
+                            printInstruction(cout);
                         }
                     }
                 break;
@@ -243,7 +264,6 @@ while(!g.getQuit()){
                     start = clock();
                     minD = DacClosetPair(set1,g,0,set1.size(),x1,y1);
                     duration = (clock() - start) / (double) CLOCKS_PER_SEC;
-                    cout << minD << endl;
                     cout << "Closest Pair: " << distance(set1[indexX],set1[indexY]) << endl;
                     cout << "Divide and Conquer Closest Pair: " << duration << " seconds" << endl;
 
@@ -256,6 +276,9 @@ while(!g.getQuit()){
                     plotLine(set1,indexX,indexY,g,255,0,0);
                     g.update();
 
+                    cout << endl << "Press the mouse to generate a point on click coordinate" << endl;
+                    cout << "Press the 'R' key to generate 20 more random points" << endl;
+                    cout << "Once finished, press the 'O' key to exit the loop and choose another algorithm" << endl << endl;
                     while(mouseClicks) {
                         if(g.getMouseClick(x, y)) {
                             g.clear();
@@ -268,7 +291,6 @@ while(!g.getQuit()){
                             start = clock();
                             minD = DacClosetPair(set1,g,0,set1.size(),x1,y1);
                             duration = (clock() - start) / (double) CLOCKS_PER_SEC;
-                            cout << minD << endl;
                             cout << "Closest Pair: " << distance(set1[indexX], set1[indexY]) << endl;
                             cout << "Divide and Conquer Closest Pair: " << duration << " seconds" << endl;
                             runTimeIterator = runTime.find("Divide and Conquer Closest Pair");
@@ -295,7 +317,6 @@ while(!g.getQuit()){
                             start = clock();
                             minD = DacClosetPair(set1,g,0,set1.size(),x1,y1);
                             duration = (clock() - start) / (double) CLOCKS_PER_SEC;
-                            cout << minD << endl;
                             cout << "Closest Pair: " << distance(set1[indexX], set1[indexY]) << endl;
                             cout << "Divide and Conquer Closest Pair: " << duration << " seconds" << endl;
                             runTimeIterator = runTime.find("Divide and Conquer Closest Pair");
@@ -311,6 +332,7 @@ while(!g.getQuit()){
                         if (g.getKey() == 'O') {
                             mouseClicks = false;
                             cout << "Out of loop" << endl;
+                            printInstruction(cout);
                         }
                     }
 			        break;
@@ -331,6 +353,9 @@ while(!g.getQuit()){
                     plotData(set1,g);
                     g.update();
 
+                    cout << endl << "Press the mouse to generate a point on click coordinate" << endl;
+                    cout << "Press the 'R' key to generate 20 more random points" << endl;
+                    cout << "Once finished, press the 'O' key to exit the loop and choose another algorithm" << endl << endl;
                     while(mouseClicks) {
                         if(g.getMouseClick(x, y)) {
                             g.clear();
@@ -369,6 +394,7 @@ while(!g.getQuit()){
                         if (g.getKey() == 'O') {
                             mouseClicks = false;
                             cout << "Out of loop" << endl;
+                            printInstruction(cout);
                         }
                     }
                     break;
@@ -439,15 +465,24 @@ void BruteForceClosetPair(DataSet_t data,SDL_Plotter& g){
 void BruteForceConvexHull(DataSet_t data,SDL_Plotter &g ){
     double d = 0;
     double min = distance(data[0],data[1]);
+    //holds the data for the convex hull
     DataSet_t Convex;
+    //comparison point
     for (int i = 0; i< data.size() -1; i ++){
+        //loop through all other points
         for (int j = i +1; j < data.size(); j ++){
+            //calculates difference in x and y coordinates of the points
             double a = data[j].second - data[i].second;
             double b = data[i].first - data[j].first;
+            //subtract the slopes of the line
             double ck = data[i].first*data[j].second -  data[j].first*data[i].second;
             bool samerightside = true;
             bool sameleftside = true;
             bool up = false;
+
+            //checks all other points with the line that is created from the other two points
+            //if they are all on the same side then they are in the convex hull
+            //if they are not all on the same side then they are not in the convex hull
             for (int k = 0; k < data.size();k++){
                 if (k != i && k!= j){
                     double num = data[k].first*a + b*data[k].second -ck;
@@ -467,45 +502,34 @@ void BruteForceConvexHull(DataSet_t data,SDL_Plotter &g ){
                 }
 
             }
-          //  cout <<sameleftside <<" --" << samerightside << endl;
+
+            //pushes the convex points into the data set
             if (samerightside || sameleftside){
                 Convex.push_back(make_pair(data[i].first,data[i].second));
                 Convex.push_back(make_pair(data[j].first,data[j].second));
-               // plotLine(data,i,j,g,0,255,0);
             }
-            //plot all convex HULL
+            //plots current convex hull data points
              g.clear();
             plotData(data,g);
             //plot current processing line
-            plotLine(data,i,j,g,0,0,255);
+            plotLine(data, i, j, g, 0, 0, 255);
             g.Sleep(50);
-           for (int h = 0; h < Convex.size() ; h=h+2){
-                plotLine(Convex,h,h+1,g,0,255,0);
-               // cout << Convex[h].first << " " <<  Convex[h].second << " --" <<  Convex[h+1].first << " " <<  Convex[h+1].second <<endl;
-            }
-            g.update();
-           /* //clear screen
-            g.clear();
-            //plot all point;
-            plotData(data,g);
-            //plot current min line in green
-            plotLine(data,x,y,g,0,255,0);
-            //plot curent processing line in blue
-            plotLine(data,i,j,g,0,0,255);
-            g.Sleep(100);
-            g.update();*/
+           for (int h = 0; h < Convex.size() ; h = h + 2){
+                plotLine(Convex, h, h + 1, g, 0, 255, 0);
+           }
+           g.update();
         }
     }
     g.clear();
-    //plost all point;
+    //plot all point;
     plotData(data,g);
-    for (int h = 0; h < Convex.size(); h=h+2){
-        plotLine(Convex,h,h+1,g,0,255,0);
-        // cout << Convex[h].first << " " <<  Convex[h].second << " --" <<  Convex[h+1].first << " " <<  Convex[h+1].second <<endl;
+    for (int h = 0; h < Convex.size(); h = h + 2){
+        plotLine(Convex, h, h+1, g, 0, 255, 0);
     }
     g.update();
 }
 
+//plots pixels around the given point so it's easier to see
 void plotPoint(point p, SDL_Plotter& g){
     for(int i = 0; i < 2; i++){
         for(int j = 0; j < 2; j++){
@@ -532,6 +556,7 @@ void plotPoint(point p, SDL_Plotter& g){
     }
 }
 
+//connects two points with a line
 void plotLine(DataSet_t data,int index1,int index2,SDL_Plotter &g,int r,int gr,int b){
     p1.setX(data[index1].first);
     p1.setY(data[index1].second);
@@ -546,35 +571,41 @@ void plotLine(DataSet_t data,int index1,int index2,SDL_Plotter &g,int r,int gr,i
     s.draw(g);
 }
 
+//plots all the data points
 void plotData(DataSet_t data,SDL_Plotter& g){
     point p;
- for (int i = 0; i < data.size(); i++) {
-     p.setX(data[i].first);
-     p.setY(data[i].second);
-     c.setR(0);
-     c.setG(0);
-     c.setB(0);
-     p.setColor(c);
-     // cout << p.getX() << " " << p.getY() << endl;
-     plotPoint(p,g);
- }
+    for (int i = 0; i < data.size(); i++) {
+        p.setX(data[i].first);
+        p.setY(data[i].second);
+        c.setR(0);
+        c.setG(0);
+        c.setB(0);
+        p.setColor(c);
+        plotPoint(p,g);
+    }
 }
+
 double DacClosetPair(DataSet_t data,SDL_Plotter& g,int start,int n,int &x,int &y){
+    //each section is 3 or less data points
     if (n-start <= 3) {
 
         double min = 1000000;
+        //comparison point
         for (int i = start; i < n - 1; i++) {
+            //loop through all other points in the section
             for (int j = i + 1; j < n; j++) {
                 plotData(data, g);
                 //plot current processing line in blue
                 plotLine(data, i, j, g, 0, 0, 255);
                 g.update();
                 g.Sleep(100);
+                //updates min if distance is shorter than current min
                 if (distance(data[i], data[j]) < min) {
                     min = distance(data[i], data[j]);
                     x = i;
                     y = j;
                 }
+                //deletes the blue line
                 plotLine(data, i, j, g, 255, 255, 255);
                 g.update();
             }
@@ -582,17 +613,20 @@ double DacClosetPair(DataSet_t data,SDL_Plotter& g,int start,int n,int &x,int &y
         //plot minimum line in green
         plotLine(data, x, y, g, 0, 255, 0);
         g.update();
-        cout << " --> " << x << " " << y << endl;
         return min;
     }
     else{
+        //closest pair indices for left and right sections
         int x1 = 0;
         int y1 = 0;
         int x2 = 0;
         int y2 = 0;
-        int middle = start + (n-start)/2;
+        //middle index of the section
+        int middle = start + (n - start) / 2;
 
+        //recurse left section
         double left = DacClosetPair(data,g,start,middle,x1,y1);
+        //recurse right section
         double right = DacClosetPair(data,g,middle,n,x2,y2);
         double minD = -1;
 
@@ -602,12 +636,14 @@ double DacClosetPair(DataSet_t data,SDL_Plotter& g,int start,int n,int &x,int &y
         g.update();
         g.Sleep(300);
 
+        //compares the left and right shortest pair distances
         if (left <= right){
             minD = left;
             indexX = x1;
             indexY = y1;
             x = x1;
             y = y1;
+            //deletes the right line
             plotLine(data, x2, y2, g, 255, 255, 255);
             g.update();
         }else{
@@ -616,11 +652,12 @@ double DacClosetPair(DataSet_t data,SDL_Plotter& g,int start,int n,int &x,int &y
             indexY = y2;
             x = x2;
             y = y2;
+            //deletes the left line
             plotLine(data, x1, y1, g, 255, 255, 255);
             g.update();
         }
 
-        //check middle range
+        //check middle range of the minimum distance in between the right and left sections
         vector<int> range;
         for ( int i = start; i < n  ; i++){
             if (abs(data[i].first - data[middle].first) < minD){
@@ -634,31 +671,22 @@ double DacClosetPair(DataSet_t data,SDL_Plotter& g,int start,int n,int &x,int &y
                     min_middle = distance(data[range[i]],data[range[j]]);
                     x = range[i];
                     y = range[j];
-                    //min of middle ranges
-                    //plot the new min in brown
-                    //plotLine(data, x, y, g, 165, 42, 42);
-//                    plotLine(data, x1, y1, g, 255, 255, 255);
-//                    plotLine(data, x2, y2, g, 255, 255, 255);
-//                    g.update();
-//                    g.Sleep(500);
                 }
             }
         }
 
+        //if there is a pair of points that are the shortest pair in the middle range then we update the
+        //minimum distance
         if (min_middle < minD){
             minD = min_middle;
             indexX = x;
             indexY = y;
         }
-        cout << left << " " << right << " " << min_middle << endl;
-        cout << "return " << minD << endl;
-
         return minD;
-
     }
-
 }
 
+//loops through the data points that are in the convex hull and connects them
 void plotConvexHull(DataSet_t data, SDL_Plotter &g,int r,int gr,int b){
     for (int i = 0; i < data.size() - 1; i++) {
         plotLine(data, i, i + 1, g, r, gr, b);
@@ -668,12 +696,14 @@ void plotConvexHull(DataSet_t data, SDL_Plotter &g,int r,int gr,int b){
 }
 
 DataSet_t DacConvexHull(DataSet_t data,SDL_Plotter& g,DataSet_t ex){
+    //splits sections to 5 or less points
     if (data.size() <= 5){
         double d = 0;
         double min = distance(data[0],data[1]);
+        //set of Convex point
         set<pair<int,int>> Convex;
-        for (int i = 0; i< data.size(); i ++){
-            for (int j = i +1; j < data.size(); j ++){
+        for (int i = 0; i< data.size(); i++){
+            for (int j = i + 1; j < data.size(); j++){
                 double a = data[j].second - data[i].second;
                 double b = data[i].first - data[j].first;
                 double ck = data[i].first*data[j].second -  data[j].first*data[i].second;
@@ -692,46 +722,46 @@ DataSet_t DacConvexHull(DataSet_t data,SDL_Plotter& g,DataSet_t ex){
                     }
 
                 }
-                //  cout <<sameleftside <<" --" << samerightside << endl;
+                //if they are on the same side put in to convex set
                 if (samerightside || sameleftside){
                     Convex.insert(data[i]);
                     Convex.insert(data[j]);
-                    // plotLine(data,i,j,g,0,255,0);
                 }
 
 
             }
         }
         DataSet_t result;
-
+        //convert set to a data_set
         for (auto i:Convex){
             result.push_back(i);
         }
 
         middleC = make_pair(0,0);
         int size = result.size();
+        //convert result in to sort able format
         for (int i = 0 ;i < size ;i ++){
             middleC.first += result[i].first;
             middleC.second += result[i].second;
             result[i].first *= size;
             result[i].second *= size;
         }
+        //sorting
         sort(result.begin(),result.end(),compare);
+        //convert in to normal form
         for (int i = 0; i < size;i++){
             result[i] = make_pair(result[i].first/size,result[i].second/size);
         }
+        //plots the convex hull and the data points
         g.clear();
         plotData(ex,g);
         g.update();
         plotConvexHull(result,g,0,255,0);
         plotData(ex, g);
         g.update();
-        cout <<"new data" <<endl;
-        for (int i =0; i < data.size();i++){
-            cout << data[i].first << " " << data[i].second <<endl;
-        }
         return result;
     }
+    //split in to left and right
     DataSet_t Left,Right;
     for (int i = 0; i < data.size()/2;i++){
         Left.push_back(data[i]);
@@ -742,7 +772,7 @@ DataSet_t DacConvexHull(DataSet_t data,SDL_Plotter& g,DataSet_t ex){
     DataSet_t LC,RC;
     LC = DacConvexHull(Left,g,ex);
     RC = DacConvexHull(Right,g,ex);
-
+    //returns merged convex hull
     return combineHull(LC,RC,g,ex);
 }
 
@@ -751,6 +781,7 @@ DataSet_t combineHull(DataSet_t Convex1,DataSet_t Convex2,SDL_Plotter & g,DataSe
     int size2 = Convex2.size();
     int indexA = 0;
     int indexB = 0;
+    //get leftest and rightest point
     for (int i=1; i < size1; i++){
         if (Convex1[i].first > Convex1[indexA].first){
             indexA = i;
@@ -766,8 +797,10 @@ DataSet_t combineHull(DataSet_t Convex1,DataSet_t Convex2,SDL_Plotter & g,DataSe
     int t2;
     t1 = indexA;
     t2 = indexB;
+    //get up point
     while(!finish){
         finish = true;
+        //check if line is cross polygon
         while(Direction(Convex2[t2],Convex1[t1],Convex1[(t1+1)%size1])>=0){
             t1 = (t1+1)%size1;
         }
@@ -782,8 +815,10 @@ DataSet_t combineHull(DataSet_t Convex1,DataSet_t Convex2,SDL_Plotter & g,DataSe
     t1 = indexA;
     t2 = indexB;
     int temp = 0;
+    //get lower point
     while(!finish){
         finish = true;
+        //check if line is cross polygon
         while (Direction(Convex1[t1], Convex2[t2], Convex2[(t2+1)%size2])>=0)
             t2=(t2+1)%size2;
 
@@ -799,13 +834,14 @@ DataSet_t combineHull(DataSet_t Convex1,DataSet_t Convex2,SDL_Plotter & g,DataSe
     DataSet_t result;
     temp = u1;
     result.push_back(Convex1[u1]);
+    //put other valid point in to result
     while(temp!=l1){
         temp = (temp+1)%size1;
         result.push_back(Convex1[temp]);
     }
     temp = l2;
     result.push_back(Convex2[l2]);
-
+    //put other valid point in to result
     while(temp!=u2) {
         temp = (temp + 1) % size2;
         result.push_back(Convex2[temp]);
@@ -828,17 +864,19 @@ DataSet_t combineHull(DataSet_t Convex1,DataSet_t Convex2,SDL_Plotter & g,DataSe
     return result;
 }
 
-
+//checks whether the line is crossing the convex hull
 int Direction(pair<int,int> one, pair<int,int> two,pair<int,int> three){
     int temp = (two.second - one.second)*(three.first-two.first) - (three.second-two.second)*(two.first - one.first);
     if (temp == 0){
         return 0;
     }
-    if(temp > 0)
+    if(temp > 0) {
         return 1;
+    }
     return -1;
 }
 
+//comparing the points for sorting
 bool compare(pair<int,int> d1,pair<int,int> d2){
     pair<int,int> t1 = make_pair(d1.first-middleC.first,d1.second - middleC.second);
     pair<int,int> t2 = make_pair(d2.first-middleC.first,d2.second - middleC.second);
@@ -850,6 +888,7 @@ bool compare(pair<int,int> d1,pair<int,int> d2){
     return (t1.second*t2.first < t2.second*t1.first);
 }
 
+//checks the quadrants of a point
 int check(pair<int,int> point){
     if (point.first >= 0 && point.second >= 0){
         return 1;
