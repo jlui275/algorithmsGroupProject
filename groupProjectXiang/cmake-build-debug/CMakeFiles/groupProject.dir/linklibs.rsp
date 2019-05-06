@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 -lSDL2 -lSDL2_mixer -lSDL2main -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 
+=======
+-lSDL2main -lSDL2 -lSDL2_mixer -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 
+>>>>>>> 6b8dd64b22c18af1c6553c82090a3b5aad0e484d

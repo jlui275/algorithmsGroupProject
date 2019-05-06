@@ -5,7 +5,7 @@
 		<Option title="groupProject"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;CMake Files\cmake\;CMake Files\cmake\Modules\;"/>
+		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProjectGit/algorithmsGroupProject/groupProjectXiang/cmake-build-debug"/>
@@ -89,6 +89,7 @@
 		<Unit filename="C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProjectGit/algorithmsGroupProject/groupProjectXiang/color_rgb.h">
 			<Option target="groupProject"/>
 		</Unit>
+<<<<<<< HEAD
 		<Unit filename="C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProjectGit/algorithmsGroupProject/groupProjectXiang/curve.cpp">
 			<Option target="groupProject"/>
 		</Unit>
@@ -119,5 +120,19 @@
 		<Unit filename="C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProjectGit/algorithmsGroupProject/groupProjectXiang/cmake/Modules/FindSDL2_mixer.cmake">
 			<Option virtualFolder="CMake Files\cmake\Modules\"/>
 		</Unit>
+=======
+		<Unit filename="C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProjectGit/algorithmsGroupProject/groupProjectXiang/line.h">
+			<Option target="groupProject"/>
+		</Unit>
+		<Unit filename="C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProjectGit/algorithmsGroupProject/groupProjectXiang/main.cpp">
+			<Option target="groupProject"/>
+		</Unit>
+		<Unit filename="C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProjectGit/algorithmsGroupProject/groupProjectXiang/point.h">
+			<Option target="groupProject"/>
+		</Unit>
+		<Unit filename="C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProjectGit/algorithmsGroupProject/groupProjectXiang/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+>>>>>>> 6b8dd64b22c18af1c6553c82090a3b5aad0e484d
 	</Project>
 </CodeBlocks_project_file>

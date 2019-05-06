@@ -11,7 +11,7 @@
 #define CURVE_H_INCLUDED
 #include <vector>
 #include "line.h"
-typedef vector<pair<int,long double>> DataSet_t;
+typedef vector<pair<int,int>> DataSet_t;
 typedef vector<DataSet_t> Data_t;
 
 class curve {

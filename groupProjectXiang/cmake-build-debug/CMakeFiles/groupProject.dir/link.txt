@@ -1,3 +1,7 @@
 "C:\Program Files\JetBrains\CLion 2018.3.3\bin\cmake\win\bin\cmake.exe" -E remove -f CMakeFiles\groupProject.dir/objects.a
 C:\MinGW\bin\ar.exe cr CMakeFiles\groupProject.dir/objects.a @CMakeFiles\groupProject.dir\objects1.rsp
+<<<<<<< HEAD
 C:\MinGW\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\groupProject.dir/objects.a -Wl,--no-whole-archive  -o groupProject.exe -Wl,--out-implib,libgroupProject.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\groupProject.dir\linklibs.rsp
+=======
+C:\MinGW\bin\g++.exe  -std=c++11 -lmingw32 -g  -static-libgcc -static-libstdc++ -Wl,--whole-archive CMakeFiles\groupProject.dir/objects.a -Wl,--no-whole-archive  -o groupProject.exe -Wl,--out-implib,libgroupProject.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\groupProject.dir\linklibs.rsp
+>>>>>>> 6b8dd64b22c18af1c6553c82090a3b5aad0e484d

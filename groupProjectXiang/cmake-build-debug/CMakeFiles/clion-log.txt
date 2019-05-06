@@ -1,4 +1,5 @@
 "C:\Program Files\JetBrains\CLion 2018.3.3\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" "C:\Users\jlui1\Documents\Baylor University\Junior Spring\Algorithms\Projects\groupProjectGit\algorithmsGroupProject\groupProjectXiang"
+<<<<<<< HEAD
 -- The C compiler identification is GNU 6.3.0
 -- The CXX compiler identification is GNU 6.3.0
 -- Check for working C compiler: C:/MinGW/bin/gcc.exe
@@ -18,6 +19,8 @@
 -- Found Threads: TRUE  
 -- Found SDL2: mingw32;-mwindows;C:/MinGW/lib/libSDL2main.a;C:/MinGW/lib/libSDL2.dll.a  
 -- Found SDL2_mixer: C:/MinGW/lib/libSDL2_mixer.dll.a (found version "2.0.4") 
+=======
+>>>>>>> 6b8dd64b22c18af1c6553c82090a3b5aad0e484d
 -- Configuring done
 -- Generating done
 -- Build files have been written to: C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProjectGit/algorithmsGroupProject/groupProjectXiang/cmake-build-debug

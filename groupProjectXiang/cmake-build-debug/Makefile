@@ -149,6 +149,7 @@ color_rgb.cpp.s:
 	$(MAKE) -f CMakeFiles\groupProject.dir\build.make CMakeFiles/groupProject.dir/color_rgb.cpp.s
 .PHONY : color_rgb.cpp.s
 
+<<<<<<< HEAD
 curve.obj: curve.cpp.obj
 
 .PHONY : curve.obj
@@ -205,6 +206,10 @@ line.cpp.s:
 
 main.obj: main.cpp.obj
 
+=======
+main.obj: main.cpp.obj
+
+>>>>>>> 6b8dd64b22c18af1c6553c82090a3b5aad0e484d
 .PHONY : main.obj
 
 # target to build an object file
@@ -230,6 +235,7 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles\groupProject.dir\build.make CMakeFiles/groupProject.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+<<<<<<< HEAD
 point.obj: point.cpp.obj
 
 .PHONY : point.obj
@@ -257,6 +263,8 @@ point.cpp.s:
 	$(MAKE) -f CMakeFiles\groupProject.dir\build.make CMakeFiles/groupProject.dir/point.cpp.s
 .PHONY : point.cpp.s
 
+=======
+>>>>>>> 6b8dd64b22c18af1c6553c82090a3b5aad0e484d
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -269,6 +277,7 @@ help:
 	@echo ... color_rgb.obj
 	@echo ... color_rgb.i
 	@echo ... color_rgb.s
+<<<<<<< HEAD
 	@echo ... curve.obj
 	@echo ... curve.i
 	@echo ... curve.s
@@ -281,6 +290,11 @@ help:
 	@echo ... point.obj
 	@echo ... point.i
 	@echo ... point.s
+=======
+	@echo ... main.obj
+	@echo ... main.i
+	@echo ... main.s
+>>>>>>> 6b8dd64b22c18af1c6553c82090a3b5aad0e484d
 .PHONY : help
 
 

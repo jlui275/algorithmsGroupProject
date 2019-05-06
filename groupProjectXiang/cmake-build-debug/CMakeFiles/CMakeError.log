@@ -1,19 +1,35 @@
 Determining if the include file pthread.h exists failed with the following output:
 Change Dir: C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProjectGit/algorithmsGroupProject/groupProjectXiang/cmake-build-debug/CMakeFiles/CMakeTmp
 
+<<<<<<< HEAD
 Run Build Command:"C:/MinGW/bin/mingw32-make.exe" "cmTC_5a15c/fast"
 C:/MinGW/bin/mingw32-make.exe -f CMakeFiles\cmTC_5a15c.dir\build.make CMakeFiles/cmTC_5a15c.dir/build
 mingw32-make.exe[1]: Entering directory 'C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProjectGit/algorithmsGroupProject/groupProjectXiang/cmake-build-debug/CMakeFiles/CMakeTmp'
 Building C object CMakeFiles/cmTC_5a15c.dir/CheckIncludeFile.c.obj
 C:\MinGW\bin\gcc.exe    -o CMakeFiles\cmTC_5a15c.dir\CheckIncludeFile.c.obj   -c "C:\Users\jlui1\Documents\Baylor University\Junior Spring\Algorithms\Projects\groupProjectGit\algorithmsGroupProject\groupProjectXiang\cmake-build-debug\CMakeFiles\CMakeTmp\CheckIncludeFile.c"
+=======
+Run Build Command:"C:/MinGW/bin/mingw32-make.exe" "cmTC_0c2f3/fast"
+C:/MinGW/bin/mingw32-make.exe -f CMakeFiles\cmTC_0c2f3.dir\build.make CMakeFiles/cmTC_0c2f3.dir/build
+mingw32-make.exe[1]: Entering directory 'C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProjectGit/algorithmsGroupProject/groupProjectXiang/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_0c2f3.dir/CheckIncludeFile.c.obj
+C:\MinGW\bin\gcc.exe    -o CMakeFiles\cmTC_0c2f3.dir\CheckIncludeFile.c.obj   -c "C:\Users\jlui1\Documents\Baylor University\Junior Spring\Algorithms\Projects\groupProjectGit\algorithmsGroupProject\groupProjectXiang\cmake-build-debug\CMakeFiles\CMakeTmp\CheckIncludeFile.c"
+>>>>>>> 6b8dd64b22c18af1c6553c82090a3b5aad0e484d
 C:\Users\jlui1\Documents\Baylor University\Junior Spring\Algorithms\Projects\groupProjectGit\algorithmsGroupProject\groupProjectXiang\cmake-build-debug\CMakeFiles\CMakeTmp\CheckIncludeFile.c:1:21: fatal error: pthread.h: No such file or directory
  #include <pthread.h>
                      ^
 compilation terminated.
+<<<<<<< HEAD
 CMakeFiles\cmTC_5a15c.dir\build.make:64: recipe for target 'CMakeFiles/cmTC_5a15c.dir/CheckIncludeFile.c.obj' failed
 mingw32-make.exe[1]: *** [CMakeFiles/cmTC_5a15c.dir/CheckIncludeFile.c.obj] Error 1
 mingw32-make.exe[1]: Leaving directory 'C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProjectGit/algorithmsGroupProject/groupProjectXiang/cmake-build-debug/CMakeFiles/CMakeTmp'
 Makefile:120: recipe for target 'cmTC_5a15c/fast' failed
 mingw32-make.exe: *** [cmTC_5a15c/fast] Error 2
+=======
+CMakeFiles\cmTC_0c2f3.dir\build.make:64: recipe for target 'CMakeFiles/cmTC_0c2f3.dir/CheckIncludeFile.c.obj' failed
+mingw32-make.exe[1]: *** [CMakeFiles/cmTC_0c2f3.dir/CheckIncludeFile.c.obj] Error 1
+mingw32-make.exe[1]: Leaving directory 'C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProjectGit/algorithmsGroupProject/groupProjectXiang/cmake-build-debug/CMakeFiles/CMakeTmp'
+Makefile:120: recipe for target 'cmTC_0c2f3/fast' failed
+mingw32-make.exe: *** [cmTC_0c2f3/fast] Error 2
+>>>>>>> 6b8dd64b22c18af1c6553c82090a3b5aad0e484d
 
 

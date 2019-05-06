@@ -42,10 +42,10 @@ RM = "C:\Program Files\JetBrains\CLion 2018.3.3\bin\cmake\win\bin\cmake.exe" -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "C:\Users\jlui1\Documents\Baylor University\Junior Spring\Algorithms\Projects\groupProject"
+CMAKE_SOURCE_DIR = "C:\Users\jlui1\Documents\Baylor University\Junior Spring\Algorithms\Projects\groupProjectGit\algorithmsGroupProject"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "C:\Users\jlui1\Documents\Baylor University\Junior Spring\Algorithms\Projects\groupProject\cmake-build-debug"
+CMAKE_BINARY_DIR = "C:\Users\jlui1\Documents\Baylor University\Junior Spring\Algorithms\Projects\groupProjectGit\algorithmsGroupProject\cmake-build-debug"
 
 # Include any dependencies generated for this target.
 include CMakeFiles/groupProject.dir/depend.make
@@ -58,29 +58,29 @@ include CMakeFiles/groupProject.dir/flags.make
 
 CMakeFiles/groupProject.dir/main.cpp.obj: CMakeFiles/groupProject.dir/flags.make
 CMakeFiles/groupProject.dir/main.cpp.obj: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\jlui1\Documents\Baylor University\Junior Spring\Algorithms\Projects\groupProject\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/groupProject.dir/main.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\groupProject.dir\main.cpp.obj -c "C:\Users\jlui1\Documents\Baylor University\Junior Spring\Algorithms\Projects\groupProject\main.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\jlui1\Documents\Baylor University\Junior Spring\Algorithms\Projects\groupProjectGit\algorithmsGroupProject\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/groupProject.dir/main.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\groupProject.dir\main.cpp.obj -c "C:\Users\jlui1\Documents\Baylor University\Junior Spring\Algorithms\Projects\groupProjectGit\algorithmsGroupProject\main.cpp"
 
 CMakeFiles/groupProject.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/groupProject.dir/main.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\jlui1\Documents\Baylor University\Junior Spring\Algorithms\Projects\groupProject\main.cpp" > CMakeFiles\groupProject.dir\main.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\jlui1\Documents\Baylor University\Junior Spring\Algorithms\Projects\groupProjectGit\algorithmsGroupProject\main.cpp" > CMakeFiles\groupProject.dir\main.cpp.i
 
 CMakeFiles/groupProject.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/groupProject.dir/main.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\jlui1\Documents\Baylor University\Junior Spring\Algorithms\Projects\groupProject\main.cpp" -o CMakeFiles\groupProject.dir\main.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\jlui1\Documents\Baylor University\Junior Spring\Algorithms\Projects\groupProjectGit\algorithmsGroupProject\main.cpp" -o CMakeFiles\groupProject.dir\main.cpp.s
 
 CMakeFiles/groupProject.dir/SDL_Plotter.cpp.obj: CMakeFiles/groupProject.dir/flags.make
 CMakeFiles/groupProject.dir/SDL_Plotter.cpp.obj: ../SDL_Plotter.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\jlui1\Documents\Baylor University\Junior Spring\Algorithms\Projects\groupProject\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/groupProject.dir/SDL_Plotter.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\groupProject.dir\SDL_Plotter.cpp.obj -c "C:\Users\jlui1\Documents\Baylor University\Junior Spring\Algorithms\Projects\groupProject\SDL_Plotter.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\jlui1\Documents\Baylor University\Junior Spring\Algorithms\Projects\groupProjectGit\algorithmsGroupProject\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/groupProject.dir/SDL_Plotter.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\groupProject.dir\SDL_Plotter.cpp.obj -c "C:\Users\jlui1\Documents\Baylor University\Junior Spring\Algorithms\Projects\groupProjectGit\algorithmsGroupProject\SDL_Plotter.cpp"
 
 CMakeFiles/groupProject.dir/SDL_Plotter.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/groupProject.dir/SDL_Plotter.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\jlui1\Documents\Baylor University\Junior Spring\Algorithms\Projects\groupProject\SDL_Plotter.cpp" > CMakeFiles\groupProject.dir\SDL_Plotter.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\jlui1\Documents\Baylor University\Junior Spring\Algorithms\Projects\groupProjectGit\algorithmsGroupProject\SDL_Plotter.cpp" > CMakeFiles\groupProject.dir\SDL_Plotter.cpp.i
 
 CMakeFiles/groupProject.dir/SDL_Plotter.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/groupProject.dir/SDL_Plotter.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\jlui1\Documents\Baylor University\Junior Spring\Algorithms\Projects\groupProject\SDL_Plotter.cpp" -o CMakeFiles\groupProject.dir\SDL_Plotter.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\jlui1\Documents\Baylor University\Junior Spring\Algorithms\Projects\groupProjectGit\algorithmsGroupProject\SDL_Plotter.cpp" -o CMakeFiles\groupProject.dir\SDL_Plotter.cpp.s
 
 # Object files for target groupProject
 groupProject_OBJECTS = \
@@ -96,7 +96,7 @@ groupProject.exe: CMakeFiles/groupProject.dir/build.make
 groupProject.exe: CMakeFiles/groupProject.dir/linklibs.rsp
 groupProject.exe: CMakeFiles/groupProject.dir/objects1.rsp
 groupProject.exe: CMakeFiles/groupProject.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\jlui1\Documents\Baylor University\Junior Spring\Algorithms\Projects\groupProject\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable groupProject.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\jlui1\Documents\Baylor University\Junior Spring\Algorithms\Projects\groupProjectGit\algorithmsGroupProject\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable groupProject.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\groupProject.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -109,6 +109,6 @@ CMakeFiles/groupProject.dir/clean:
 .PHONY : CMakeFiles/groupProject.dir/clean
 
 CMakeFiles/groupProject.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" "C:\Users\jlui1\Documents\Baylor University\Junior Spring\Algorithms\Projects\groupProject" "C:\Users\jlui1\Documents\Baylor University\Junior Spring\Algorithms\Projects\groupProject" "C:\Users\jlui1\Documents\Baylor University\Junior Spring\Algorithms\Projects\groupProject\cmake-build-debug" "C:\Users\jlui1\Documents\Baylor University\Junior Spring\Algorithms\Projects\groupProject\cmake-build-debug" "C:\Users\jlui1\Documents\Baylor University\Junior Spring\Algorithms\Projects\groupProject\cmake-build-debug\CMakeFiles\groupProject.dir\DependInfo.cmake" --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" "C:\Users\jlui1\Documents\Baylor University\Junior Spring\Algorithms\Projects\groupProjectGit\algorithmsGroupProject" "C:\Users\jlui1\Documents\Baylor University\Junior Spring\Algorithms\Projects\groupProjectGit\algorithmsGroupProject" "C:\Users\jlui1\Documents\Baylor University\Junior Spring\Algorithms\Projects\groupProjectGit\algorithmsGroupProject\cmake-build-debug" "C:\Users\jlui1\Documents\Baylor University\Junior Spring\Algorithms\Projects\groupProjectGit\algorithmsGroupProject\cmake-build-debug" "C:\Users\jlui1\Documents\Baylor University\Junior Spring\Algorithms\Projects\groupProjectGit\algorithmsGroupProject\cmake-build-debug\CMakeFiles\groupProject.dir\DependInfo.cmake" --color=$(COLOR)
 .PHONY : CMakeFiles/groupProject.dir/depend
 
