@@ -12,13 +12,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e467f1fa-8fc7-44e1-bbc5-442ae6998132" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/groupProject.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/groupProject.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/groupProject.dir/main.cpp.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/groupProject.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/groupProject.dir/objects.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/groupProject.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/groupProject.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/curve.h" beforeDir="false" afterPath="$PROJECT_DIR$/curve.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
@@ -63,11 +56,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="8" selection-end-column="3" />
+            <state relative-caret-position="239">
+              <caret line="428" column="26" lean-forward="true" selection-start-line="428" selection-start-column="26" selection-end-line="428" selection-end-column="26" />
               <folding>
                 <element signature="e#414#433#0" expanded="true" />
-                <element signature="e#2077#2503#0" />
               </folding>
             </state>
           </provider>
@@ -118,6 +110,7 @@
       <find>cout</find>
       <find>y1</find>
       <find>g.clear()</find>
+      <find>mind</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -139,9 +132,9 @@
   </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="952" />
-    <option name="width" value="977" />
-    <option name="height" value="1038" />
+    <option name="x" value="951" />
+    <option name="width" value="978" />
+    <option name="height" value="1039" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -224,11 +217,12 @@
       <workItem from="1556670895629" duration="18967000" />
       <workItem from="1556903619438" duration="3599000" />
       <workItem from="1557082513656" duration="9890000" />
+      <workItem from="1557161310256" duration="2534000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="74908000" />
+    <option name="totallyTimeSpent" value="77442000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -239,7 +233,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.34844193" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.34844193" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.24302326" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -353,6 +347,15 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -374,22 +377,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="8" selection-end-column="3" />
+        <state relative-caret-position="239">
+          <caret line="428" column="26" lean-forward="true" selection-start-line="428" selection-start-column="26" selection-end-line="428" selection-end-column="26" />
           <folding>
             <element signature="e#414#433#0" expanded="true" />
-            <element signature="e#2077#2503#0" />
           </folding>
         </state>
       </provider>

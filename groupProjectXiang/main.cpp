@@ -33,21 +33,37 @@ const int COL_MAX = 1000;
 point p1(50,50);
 point p2(50,50);
 
+//plots the pixels around the point in a 2x2 square
 void plotPoint(point p, SDL_Plotter& g);
+//performs a brute force closest pair algorithm on the given data and shows the animation on screen
 void BruteForceClosetPair(DataSet_t data,SDL_Plotter& g);
+//plots all the data points in the data set
 void plotData(DataSet_t,SDL_Plotter& g);
+//calculates the distance from one point to another
 double distance( pair<int,long double> x,pair<int,long double> y);
-void plotLine(DataSet_t data,int x,int y,SDL_Plotter &g,int r,int gr,int b);
+//plots a line connected two points in the data set given the indexes of the points in the data set
+void plotLine(DataSet_t data,int index1,int index2,SDL_Plotter &g,int r,int gr,int b);
+//performs a brute fofce convex hull algorithm on the given data and shows the animation on screen
 void BruteForceConvexHull(DataSet_t data,SDL_Plotter &g);
-double DacClosetPair(DataSet_t data,SDL_Plotter& g,int start,int n,int &x,int &y);
+//performs a divide and conquer closest pair algorithm on the data set and shows the animation on screen
+//It will start at the start index and end at the n index
+//The indices of the current closest pair points are at x and y
+double DacClosetPair(DataSet_t data,SDL_Plotter& g,int start,int n, int &x,int &y);
 
+//plots the algorithm and shows the animation on the screen
 void plotConvexHull(DataSet_t data,SDL_Plotter &g,int r,int gr,int b);
+//performs the divide and conquer convex hull algorithm on the data set
 DataSet_t DacConvexHull(DataSet_t data,SDL_Plotter& g,DataSet_t ex);
+//merges the local convex hulls
 DataSet_t combineHull(DataSet_t Convex1,DataSet_t Convex2,SDL_Plotter & g,DataSet_t ex);
+//checks the orientation of three lines that are the boundary of the local convex hulls
 int Direction(pair<int,int> one, pair<int,int> two,pair<int,int> three);
+//compare function for sorting the points
 bool compare(pair<int,int> d1,pair<int,int> d2);
+//returns the quadrant that the point is in
 int check(pair<int,int>);
 
+//prints the run time tableau of each algorithm
 void printRunTimes(ostream& out, map<string, pair<double, int> > runTime){
     map<string, pair<double, int> >::iterator it;
     out << endl << "Run Time Values: " << endl;
@@ -67,8 +83,9 @@ color_rgb c;
 int indexX;
 int indexY;
 
+//middle point between two points
 pair<int,int> middleC;
-DataSet_t minDistance;
+//holds all the data points
 DataSet_t set1;
 
 int main(int argc, char** argv) {
@@ -87,76 +104,87 @@ int main(int argc, char** argv) {
 	SDL_Plotter g(ROW_MAX,COL_MAX);
 	curve crv;
 
-    vector<DataSet_t> data;
-
-    DataSet_t set1;
     //generates 20 random points initially
     for (int i = 0; i < 20; i ++){
         int randX =  rand() % (COL_MAX-1) + 1;
         int randY =  rand() % (ROW_MAX-1) + 1;
         set1.push_back(make_pair(randX, randY));
     }
+    plotData(set1, g);
+    g.update();
 
 while(!g.getQuit()){
     int x, y;
-    double mind;
+    double minD;
     bool mouseClicks = true;
 		if(g.kbhit()){
 			switch(g.getKey()){
+			    //Performs the brute force closest pair algorithm
 			    case 'S':
-				 g.clear();
-				 start = clock();
-				 BruteForceClosetPair(set1,g);
-				 duration = (clock() - start) / (double) CLOCKS_PER_SEC;
-				 cout << "Brute Force Closest Pair: " << duration << " seconds" << endl;
+			        //runs the brute force algorithm and times the run time
+                   g.clear();
+                   start = clock();
+                   BruteForceClosetPair(set1,g);
+                   duration = (clock() - start) / (double) CLOCKS_PER_SEC;
+                   cout << "Brute Force Closest Pair: " << duration << " seconds" << endl;
 
-				 runTimeIterator = runTime.find("Brute Force Closest Pair");
-				 if(runTimeIterator != runTime.end()){
-				     runTimeIterator-> second = make_pair(duration, set1.size());
-				 }
-                    while(mouseClicks) {
-                        if(g.getMouseClick(x, y)) {
-                            g.clear();
-                            set1.push_back(make_pair(x,y));
-                            start = clock();
-                            BruteForceClosetPair(set1,g);
-                            duration = (clock() - start) / (double) CLOCKS_PER_SEC;
-                            cout << "Brute Force Closest Pair: " << duration << " seconds" << endl;
+                   //updates the run time tableau
+                   runTimeIterator = runTime.find("Brute Force Closest Pair");
+                   if(runTimeIterator != runTime.end()){
+                       runTimeIterator-> second = make_pair(duration, set1.size());
+                   }
+                      //after the first run occurs, user has the option to add more points via mouse clicks or by
+                      //pressing the 'R' key which will plot 20 more random points
+                      while(mouseClicks) {
+                          //plots the mouse click point and runs the algorithm again
+                          if(g.getMouseClick(x, y)) {
+                              g.clear();
+                              set1.push_back(make_pair(x,y));
+                              start = clock();
+                              BruteForceClosetPair(set1,g);
+                              duration = (clock() - start) / (double) CLOCKS_PER_SEC;
+                              cout << "Brute Force Closest Pair: " << duration << " seconds" << endl;
 
-                            runTimeIterator = runTime.find("Brute Force Closest Pair");
-                            if(runTimeIterator != runTime.end()){
-                                runTimeIterator-> second = make_pair(duration, set1.size());
-                            }
-                        }
-                        if (g.getKey() == 'R') {
-                            for (int i = 0; i < 20; i ++){
-                                int randX =  rand() % (COL_MAX-1) + 1;
-                                int randY =  rand() % (ROW_MAX-1) + 1;
-                                set1.push_back(make_pair(randX, randY));
-                            }
-                            g.clear();
-                            start = clock();
-                            BruteForceClosetPair(set1,g);
-                            duration = (clock() - start) / (double) CLOCKS_PER_SEC;
-                            cout << "Brute Force Closest Pair: " << duration << " seconds" << endl;
+                              runTimeIterator = runTime.find("Brute Force Closest Pair");
+                              if(runTimeIterator != runTime.end()){
+                                  runTimeIterator-> second = make_pair(duration, set1.size());
+                              }
+                          }
+                          //adds 20 random points to the data set and plots the algorithm again
+                          if (g.getKey() == 'R') {
+                              for (int i = 0; i < 20; i ++){
+                                  int randX =  rand() % (COL_MAX-1) + 1;
+                                  int randY =  rand() % (ROW_MAX-1) + 1;
+                                  set1.push_back(make_pair(randX, randY));
+                              }
+                              g.clear();
+                              start = clock();
+                              BruteForceClosetPair(set1,g);
+                              duration = (clock() - start) / (double) CLOCKS_PER_SEC;
+                              cout << "Brute Force Closest Pair: " << duration << " seconds" << endl;
 
-                            runTimeIterator = runTime.find("Brute Force Closest Pair");
-                            if(runTimeIterator != runTime.end()){
-                                runTimeIterator-> second = make_pair(duration, set1.size());
-                            }
-                        }
-                        if (g.getKey() == 'O') {
-                            mouseClicks = false;
-                            cout << "Out of loop" << endl;
-                        }
-                    }
+                              runTimeIterator = runTime.find("Brute Force Closest Pair");
+                              if(runTimeIterator != runTime.end()){
+                                  runTimeIterator-> second = make_pair(duration, set1.size());
+                              }
+                          }
+                          //exits the loop so that the user can run another algorithm
+                          if (g.getKey() == 'O') {
+                              mouseClicks = false;
+                              cout << "Out of loop" << endl;
+                          }
+                      }
 				break;
-				case 'H':
+                    //performs the brute force convex hull algorithm
+                case 'H':
+                    //times the run time of the brute force convex hull algorithm
                     g.clear();
                     start = clock();
                     BruteForceConvexHull(set1,g);
                     duration = (clock() - start) / (double) CLOCKS_PER_SEC;
                     cout << "Brute Force Convex Hull: " << duration << " seconds" << endl;
+
+                    //updates the run time tableau
                     runTimeIterator = runTime.find("Brute Force Convex Hull");
                     if(runTimeIterator != runTime.end()){
                         runTimeIterator-> second = make_pair(duration, set1.size());
@@ -170,6 +198,7 @@ while(!g.getQuit()){
                             BruteForceConvexHull(set1,g);
                             duration = (clock() - start) / (double) CLOCKS_PER_SEC;
                             cout << "Brute Force Convex Hull: " << duration << " seconds" << endl;
+
                             runTimeIterator = runTime.find("Brute Force Convex Hull");
                             if(runTimeIterator != runTime.end()){
                                 runTimeIterator-> second = make_pair(duration, set1.size());
@@ -186,6 +215,7 @@ while(!g.getQuit()){
                             BruteForceConvexHull(set1,g);
                             duration = (clock() - start) / (double) CLOCKS_PER_SEC;
                             cout << "Brute Force Convex Hull: " << duration << " seconds" << endl;
+
                             runTimeIterator = runTime.find("Brute Force Convex Hull");
                             if(runTimeIterator != runTime.end()){
                                 runTimeIterator-> second = make_pair(duration, set1.size());
@@ -197,23 +227,26 @@ while(!g.getQuit()){
                             cout << "Out of loop" << endl;
                         }
                     }
-                    break;
+                break;
+                //performs the divide and conquer closest pair algorithm
 			    case 'C':
 			        g.clear();
-			        //sort data first;
+			        //sorts data first;
                     sort(set1.begin(), set1.end());
-                    //initialize variable
+                    //global variable that keeps the final closest pair indices
                     indexX = 0;
                     indexY = 0;
-                    minDistance.clear();
+                    //holds the indices of the current closest pair
                     int x1,y1;
 
+                    //runs and times the algorithm
                     start = clock();
-                    mind = DacClosetPair(set1,g,0,set1.size(),x1,y1);
+                    minD = DacClosetPair(set1,g,0,set1.size(),x1,y1);
                     duration = (clock() - start) / (double) CLOCKS_PER_SEC;
-                    cout << mind << endl;
+                    cout << minD << endl;
                     cout << "Closest Pair: " << distance(set1[indexX],set1[indexY]) << endl;
                     cout << "Divide and Conquer Closest Pair: " << duration << " seconds" << endl;
+
                     runTimeIterator = runTime.find("Divide and Conquer Closest Pair");
                     if(runTimeIterator != runTime.end()){
                         runTimeIterator-> second = make_pair(duration, set1.size());
@@ -230,13 +263,12 @@ while(!g.getQuit()){
                             sort(set1.begin(), set1.end());
                             indexX = 0;
                             indexY = 0;
-                            minDistance.clear();
                             int xt,yt;
 
                             start = clock();
-                            mind = DacClosetPair(set1,g,0,set1.size(),x1,y1);
+                            minD = DacClosetPair(set1,g,0,set1.size(),x1,y1);
                             duration = (clock() - start) / (double) CLOCKS_PER_SEC;
-                            cout << mind << endl;
+                            cout << minD << endl;
                             cout << "Closest Pair: " << distance(set1[indexX], set1[indexY]) << endl;
                             cout << "Divide and Conquer Closest Pair: " << duration << " seconds" << endl;
                             runTimeIterator = runTime.find("Divide and Conquer Closest Pair");
@@ -258,13 +290,12 @@ while(!g.getQuit()){
                             sort(set1.begin(), set1.end());
                             indexX = 0;
                             indexY = 0;
-                            minDistance.clear();
                             int xt,yt;
 
                             start = clock();
-                            mind = DacClosetPair(set1,g,0,set1.size(),x1,y1);
+                            minD = DacClosetPair(set1,g,0,set1.size(),x1,y1);
                             duration = (clock() - start) / (double) CLOCKS_PER_SEC;
-                            cout << mind << endl;
+                            cout << minD << endl;
                             cout << "Closest Pair: " << distance(set1[indexX], set1[indexY]) << endl;
                             cout << "Divide and Conquer Closest Pair: " << duration << " seconds" << endl;
                             runTimeIterator = runTime.find("Divide and Conquer Closest Pair");
@@ -283,13 +314,16 @@ while(!g.getQuit()){
                         }
                     }
 			        break;
-
+                //performs the divide and conquer convex hull
                 case 'D':
+                    //sorts the data
                     sort(set1.begin(), set1.end());
+                    //performs and runs the divide and conquer convex hull algorithm
                     start = clock();
                     plotConvexHull(DacConvexHull(set1, g,set1), g, 0, 255, 0);
                     duration = (clock() - start) / (double) CLOCKS_PER_SEC;
                     cout << "Divide and Conquer Convex Hull: " << duration << " seconds" << endl;
+
                     runTimeIterator = runTime.find("Divide and Conquer Convex Hull");
                     if(runTimeIterator != runTime.end()){
                         runTimeIterator-> second = make_pair(duration, set1.size());
@@ -338,9 +372,11 @@ while(!g.getQuit()){
                         }
                     }
                     break;
-			    case 'P':
+                //prints the run time tableau
+                case 'P':
                     printRunTimes(cout, runTime);
                     break;
+                //quits the loop
                 case 'Q':
                     g.setQuit(true);
                     break;
@@ -351,6 +387,7 @@ while(!g.getQuit()){
     return 0;
 }
 
+//returns the distance of two different points
 double distance(pair<int,long double> x,pair<int,long double> y){
     double distance = sqrt(pow(x.first - y.first,2.0)+pow(x.second - y.second,2.0));
     return distance;
@@ -358,11 +395,14 @@ double distance(pair<int,long double> x,pair<int,long double> y){
 
 void BruteForceClosetPair(DataSet_t data,SDL_Plotter& g){
     double d = 0;
+    //initialize minimum with first two data points
     double min = distance(data[0],data[1]);
     int x,y;
     x = 0;
     y = 1;
+    //comparison data point
     for (int i = 0; i < data.size() - 1; i++){
+        //loops through all other data points
         for (int j = i + 1; j < data.size(); j++){
             //clear screen
             g.clear();
@@ -375,17 +415,21 @@ void BruteForceClosetPair(DataSet_t data,SDL_Plotter& g){
             d = distance(data[i],data[j]);
             g.update();
             g.Sleep(50);
+            //checks if distance is shorter than minimum and updates indices and minimum value if it is
             if (d < min){
                 min = d;
                 x = i;
                 y = j;
             }
+            //deletes the blue processing line in the the animation
             plotLine(data,i,j,g,255,255,255);
             g.update();
         }
     }
+    //outputs the shortest pair distance
     cout <<"Shortest Pair: "<< min << endl;
     g.clear();
+    //red line is the final closest pair line
     plotLine(data,x,y,g,255,0,0);
     //plot all point;
     plotData(data,g);
@@ -488,11 +532,11 @@ void plotPoint(point p, SDL_Plotter& g){
     }
 }
 
-void plotLine(DataSet_t data,int x,int y,SDL_Plotter &g,int r,int gr,int b){
-    p1.setX(data[x].first);
-    p1.setY(data[x].second);
-    p2.setX(data[y].first);
-    p2.setY(data[y].second);
+void plotLine(DataSet_t data,int index1,int index2,SDL_Plotter &g,int r,int gr,int b){
+    p1.setX(data[index1].first);
+    p1.setY(data[index1].second);
+    p2.setX(data[index2].first);
+    p2.setY(data[index2].second);
     c.setR(r);
     c.setG(gr);
     c.setB(b);
