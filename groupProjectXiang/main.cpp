@@ -11,6 +11,7 @@
 #include <iostream>
 #include <fstream>
 #include <cstdlib>
+#include "alphabet.h"
 #include <cmath>
 #include "SDL_Plotter.h"
 #include "color_rgb.h"
@@ -70,6 +71,7 @@ void printInstruction(ostream& out){
     out << "Press the 'C' key to run the Divide and Conquer Closest Pair Algorithm" << endl;
     out << "Press the 'D' key to run the Divide and Conquer Convex Hull Algorithm" << endl;
     out << "Press the 'P' key to print out the run time tableau" << endl;
+    out << "Press the 'I' key for the help screen" << endl;
     out << "Press the 'Q' key to quit the program" << endl << endl;
 }
 
@@ -121,7 +123,15 @@ int main(int argc, char** argv) {
         int randY =  rand() % (ROW_MAX-1) + 1;
         set1.push_back(make_pair(randX, randY));
     }
-    plotData(set1, g);
+  //  plotData(set1, g);
+    drawMessage(&g,"s for brute force closest pair",50,100,255,0,0);
+    drawMessage(&g,"",50,150,255,0,0);
+    drawMessage(&g,"h for brute force convex hull",50,200,255,0,0);
+    drawMessage(&g,"c for dac closest pair",50,300,255,0,0);
+    drawMessage(&g,"d for dac convex hull ",50,400,255,0,0);
+    drawMessage(&g,"p print run time tableau",50,500,255,0,0);
+    drawMessage(&g,"i for help screen:",50,600,255,0,0);
+    drawMessage(&g,"q quit the program",50,700,255,0,0);
     g.update();
     printInstruction(cout);
 while(!g.getQuit()){
@@ -129,8 +139,40 @@ while(!g.getQuit()){
     double minD;
 
     bool mouseClicks = true;
+    bool needHelp = true;
 		if(g.kbhit()){
 			switch(g.getKey()){
+                case 'I':
+                    g.clear();
+                    needHelp = true;
+                    for (int i = 0; i < g.getCol(); i++) {
+                        for (int j = 0; j < g.getRow(); j++) {
+                            g.plotPixel(i, j, 0, 0, 255);
+                        }
+                    }
+                    g.update();
+
+                    drawMessage(&g, "after choosing algorithm", 50, 50, 255, 0, 0);
+                    drawMessage(&g,"pressing r",50,100,255,0,0);
+                    drawMessage(&g,"      adds twenty more points",50,150,255,0,0);
+                    drawMessage(&g,"mouseclick:",50,200,255,0,0);
+                    drawMessage(&g,"     adds point on click location:",50,250,255,0,0);
+                    drawMessage(&g,"pressing o:",50,300,255,0,0);
+                    drawMessage(&g,"     clears screen, choose new algo",50,350,255,0,0);
+
+                    drawMessage(&g, "pick algorithm to get out of help", 50, 450, 255, 0 ,0);
+                    drawMessage(&g,"s for brute force closest pair",50,550,255,0,0);
+                    drawMessage(&g,"h for brute force convex hull",50,600,255,0,0);
+                    drawMessage(&g,"c for dac closest pair",50,650,255,0,0);
+                    drawMessage(&g,"d for dac convex hull ",50,700,255,0,0);
+
+
+                    g.update();
+
+                    //print out words
+                    //while(needHelp) {s
+                    //q}
+                    break;
 			    //Performs the brute force closest pair algorithm
 			    case 'S':
 			        //runs the brute force algorithm and times the run time
@@ -139,7 +181,7 @@ while(!g.getQuit()){
                    BruteForceClosetPair(set1,g);
                    duration = (clock() - start) / (double) CLOCKS_PER_SEC;
                    cout << "Brute Force Closest Pair: " << duration << " seconds" << endl;
-
+                    drawMessage(&g,"i for help screen:",50,50,255,0,0);
                    //updates the run time tableau
                    runTimeIterator = runTime.find("Brute Force Closest Pair");
                    if(runTimeIterator != runTime.end()){
@@ -176,6 +218,7 @@ while(!g.getQuit()){
                               g.clear();
                               start = clock();
                               BruteForceClosetPair(set1,g);
+                              drawMessage(&g,"i for help screen:",50,50,255,0,0);
                               duration = (clock() - start) / (double) CLOCKS_PER_SEC;
                               cout << "Brute Force Closest Pair: " << duration << " seconds" << endl;
 
@@ -190,6 +233,12 @@ while(!g.getQuit()){
                               cout << "Out of loop" << endl;
                               printInstruction(cout);
                           }
+                          if (g.getKey() == 'I') {
+                              mouseClicks = false;
+                              cout << "Out of loop" << endl;
+                              printInstruction(cout);
+                              break;
+                          }
                       }
 				break;
                     //performs the brute force convex hull algorithm
@@ -200,7 +249,7 @@ while(!g.getQuit()){
                     BruteForceConvexHull(set1,g);
                     duration = (clock() - start) / (double) CLOCKS_PER_SEC;
                     cout << "Brute Force Convex Hull: " << duration << " seconds" << endl;
-
+                    drawMessage(&g,"i for help screen:",50,50,255,0,0);
                     //updates the run time tableau
                     runTimeIterator = runTime.find("Brute Force Convex Hull");
                     if(runTimeIterator != runTime.end()){
@@ -216,6 +265,7 @@ while(!g.getQuit()){
                             set1.push_back(make_pair(x,y));
                             start = clock();
                             BruteForceConvexHull(set1,g);
+                            drawMessage(&g,"i for help screen:",50,50,255,0,0);
                             duration = (clock() - start) / (double) CLOCKS_PER_SEC;
                             cout << "Brute Force Convex Hull: " << duration << " seconds" << endl;
 
@@ -233,6 +283,7 @@ while(!g.getQuit()){
                             g.clear();
                             start = clock();
                             BruteForceConvexHull(set1,g);
+                            drawMessage(&g,"i for help screen:",50,50,255,0,0);
                             duration = (clock() - start) / (double) CLOCKS_PER_SEC;
                             cout << "Brute Force Convex Hull: " << duration << " seconds" << endl;
 
@@ -246,6 +297,12 @@ while(!g.getQuit()){
                             mouseClicks = false;
                             cout << "Out of loop" << endl;
                             printInstruction(cout);
+                        }
+                        if (g.getKey() == 'I') {
+                            mouseClicks = false;
+                            cout << "Out of loop" << endl;
+                            printInstruction(cout);
+                            break;
                         }
                     }
                 break;
@@ -263,6 +320,7 @@ while(!g.getQuit()){
                     //runs and times the algorithm
                     start = clock();
                     minD = DacClosetPair(set1,g,0,set1.size(),x1,y1);
+                    drawMessage(&g,"i for help screen:",50,50,255,0,0);
                     duration = (clock() - start) / (double) CLOCKS_PER_SEC;
                     cout << "Closest Pair: " << distance(set1[indexX],set1[indexY]) << endl;
                     cout << "Divide and Conquer Closest Pair: " << duration << " seconds" << endl;
@@ -272,6 +330,7 @@ while(!g.getQuit()){
                         runTimeIterator-> second = make_pair(duration, set1.size());
                     }
                     g.clear();
+                    drawMessage(&g,"i for help screen:",50,50,255,0,0);
                     plotData(set1, g);
                     plotLine(set1,indexX,indexY,g,255,0,0);
                     g.update();
@@ -298,6 +357,7 @@ while(!g.getQuit()){
                                 runTimeIterator-> second = make_pair(duration, set1.size());
                             }
                             g.clear();
+                            drawMessage(&g,"i for help screen:",50,50,255,0,0);
                             plotData(set1, g);
                             plotLine(set1, indexX, indexY, g, 255, 0, 0);
                             g.update();
@@ -325,6 +385,7 @@ while(!g.getQuit()){
                             }
 
                             g.clear();
+                            drawMessage(&g,"i for help screen:",50,50,255,0,0);
                             plotData(set1, g);
                             plotLine(set1, indexX, indexY, g, 255, 0, 0);
                             g.update();
@@ -333,6 +394,12 @@ while(!g.getQuit()){
                             mouseClicks = false;
                             cout << "Out of loop" << endl;
                             printInstruction(cout);
+                        }
+                        if (g.getKey() == 'I') {
+                            mouseClicks = false;
+                            cout << "Out of loop" << endl;
+                            printInstruction(cout);
+                            break;
                         }
                     }
 			        break;
@@ -343,6 +410,7 @@ while(!g.getQuit()){
                     //performs and runs the divide and conquer convex hull algorithm
                     start = clock();
                     plotConvexHull(DacConvexHull(set1, g,set1), g, 0, 255, 0);
+                    drawMessage(&g,"i for help screen:",50,50,255,0,0);
                     duration = (clock() - start) / (double) CLOCKS_PER_SEC;
                     cout << "Divide and Conquer Convex Hull: " << duration << " seconds" << endl;
 
@@ -363,6 +431,7 @@ while(!g.getQuit()){
                             sort(set1.begin(), set1.end());
                             start = clock();
                             plotConvexHull(DacConvexHull(set1, g,set1), g, 0, 255, 0);
+                            drawMessage(&g,"i for help screen:",50,50,255,0,0);
                             duration = (clock() - start) / (double) CLOCKS_PER_SEC;
                             cout << "Divide and Conquer Convex Hull: " << duration << " seconds" << endl;
                             runTimeIterator = runTime.find("Divide and Conquer Convex Hull");
@@ -372,6 +441,7 @@ while(!g.getQuit()){
                             plotData(set1, g);
                             g.update();
                         }
+                        cout << g.getKey() << endl;
                         if(g.getKey() == 'R') {
                             g.clear();
                             for (int i = 0; i < 20; i ++){
@@ -382,6 +452,7 @@ while(!g.getQuit()){
                             sort(set1.begin(), set1.end());
                             start = clock();
                             plotConvexHull(DacConvexHull(set1, g,set1), g, 0, 255, 0);
+                            drawMessage(&g,"i for help screen:",50,50,255,0,0);
                             duration = (clock() - start) / (double) CLOCKS_PER_SEC;
                             cout << "Divide and Conquer Convex Hull: " << duration << " seconds" << endl;
                             runTimeIterator = runTime.find("Divide and Conquer Convex Hull");
@@ -396,6 +467,12 @@ while(!g.getQuit()){
                             cout << "Out of loop" << endl;
                             printInstruction(cout);
                         }
+                        if (g.getKey() == 'I') {
+                            mouseClicks = false;
+                            cout << "Out of loop" << endl;
+                            printInstruction(cout);
+                            break;
+                        }
                     }
                     break;
                 //prints the run time tableau
@@ -403,6 +480,16 @@ while(!g.getQuit()){
                     printRunTimes(cout, runTime);
                     break;
                 //quits the loop
+			    case 'R':
+                    g.clear();
+                    for (int i = 0; i < 20; i ++){
+                        int randX =  rand() % (COL_MAX-1) + 1;
+                        int randY =  rand() % (ROW_MAX-1) + 1;
+                        set1.push_back(make_pair(randX, randY));
+                    }
+                    plotData(set1,g);
+                    g.update();
+                    break;
                 case 'Q':
                     g.setQuit(true);
                     break;

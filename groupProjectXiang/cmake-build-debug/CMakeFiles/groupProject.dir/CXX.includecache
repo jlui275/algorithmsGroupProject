@@ -636,6 +636,12 @@ string.h
 map
 -
 
+C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProjectGit/algorithmsGroupProject/groupProjectXiang/alphabet.h
+SDL_Plotter.h
+C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProjectGit/algorithmsGroupProject/groupProjectXiang/SDL_Plotter.h
+vector
+-
+
 C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProjectGit/algorithmsGroupProject/groupProjectXiang/color_rgb.h
 
 C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProjectGit/algorithmsGroupProject/groupProjectXiang/curve.h
@@ -657,6 +663,8 @@ fstream
 -
 cstdlib
 -
+alphabet.h
+C:/Users/jlui1/Documents/Baylor University/Junior Spring/Algorithms/Projects/groupProjectGit/algorithmsGroupProject/groupProjectXiang/alphabet.h
 cmath
 -
 SDL_Plotter.h
