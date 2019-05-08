@@ -7,7 +7,7 @@ After the program is initiated, these 20 points will be plotted to the screen.
 Afterwards, the user will be able to choose from 5 different commands:
 Pressing the 'S' key: Runs the Brute Force Closest Pair Algorithm
 Pressing the 'H' key: Runs the Brute Force Convex Hull Algorithm
-Pressing the 'C' key: Runs the Divide and Conquer Closet Pair Algorithm
+Pressing the 'C' key: Runs the Divide and Conquer Closest Pair Algorithm
 Pressing the 'D' key: Runs the Divide and Conquer Convex Hull Algorithm
 Pressing the 'P' key: Prints out the run time tableau of all 4 algorithms
 

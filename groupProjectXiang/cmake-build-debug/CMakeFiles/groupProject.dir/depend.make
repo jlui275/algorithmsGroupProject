@@ -55,6 +55,7 @@ CMakeFiles/groupProject.dir/main.cpp.obj: ../SDL2/SDL_video.h
 CMakeFiles/groupProject.dir/main.cpp.obj: ../SDL2/begin_code.h
 CMakeFiles/groupProject.dir/main.cpp.obj: ../SDL2/close_code.h
 CMakeFiles/groupProject.dir/main.cpp.obj: ../SDL_Plotter.h
+CMakeFiles/groupProject.dir/main.cpp.obj: ../alphabet.h
 CMakeFiles/groupProject.dir/main.cpp.obj: ../color_rgb.h
 CMakeFiles/groupProject.dir/main.cpp.obj: ../curve.h
 CMakeFiles/groupProject.dir/main.cpp.obj: ../line.h
